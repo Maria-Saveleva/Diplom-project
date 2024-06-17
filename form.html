@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculate Bulbs</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form method="post">
+            <h2>Рассчитать кол-во лампочек на помещение 💡💡💡</h2>
+            <label for="length">Длинна:</label>
+            <input type="number" id="length" name="length" required><br><br>
+            
+            <label for="width">Ширина:</label>
+            <input type="number" id="width" name="width" required><br><br>
+            
+            <label for="height">Высота:</label>
+            <input type="number" id="height" name="height" required><br><br>
+            
+            <label for="room_type">Тип комнаты:</label>
+            <select id="room_type" name="room_type" required>
+                <option value="офис общего назначения">офис общего назначения</option>
+                <option value="офис для чертежных работ">офис для чертежных работ</option>
+                <option value="зал для конференций">зал для конференций</option>
+                <option value="переговорная комната">переговорная комната</option>
+                <option value="эскалатор">эскалатор</option>
+                <option value="лестница">лестница</option>
+                <option value="холл">холл</option>
+                <option value="коридор">коридор</option>
+                <option value="архив">архив</option>
+                <option value="подсобные помещения">подсобные помещения</option>
+                <option value="кладовая">кладовая</option>
+            </select><br><br>
+            
+            <button type="submit">Рассчитать</button>
+        </form>
+        {% if result is not none %}
+        <div class="result">
+            <h2>Рекомендованое кол-во ламп:  {{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
